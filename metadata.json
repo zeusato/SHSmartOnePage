@@ -1,0 +1,5 @@
+{
+  "name": "Gen Tờ Rơi SHS 2.0",
+  "description": "A single-page application to generate a promotional flyer for SHS's new trading system. Users can input a broker ID to create a dynamic QR code on the flyer and download the final image as a high-resolution PNG.",
+  "requestFramePermissions": []
+}
