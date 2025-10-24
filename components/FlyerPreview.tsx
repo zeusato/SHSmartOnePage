@@ -1,6 +1,10 @@
 import React, { forwardRef } from 'react';
 import DynamicQRCode from './DynamicQRCode';
 import { BulletIcon } from './icons';
+import Logo from '../assets/Logo.png';
+import Mockup from '../assets/Mockup.png';
+import QRCodeImage from '../assets/QR moi.png';
+import Silk from '../assets/Silk.png';
 
 interface FlyerPreviewProps {
   brokerId: string;
@@ -21,12 +25,12 @@ const FlyerPreview = forwardRef<HTMLDivElement, FlyerPreviewProps>(({
   return (
     <div ref={ref} className="w-full h-full bg-gray-50 overflow-hidden text-black relative font-sans">
         {/* Logo */}
-        <img src="assets/Logo.png" alt="Logo" className="absolute top-2 left-20 w-16 h-16 object-contain scale-[3.5] z-20" />
+        <img src={Logo} alt="Logo" className="absolute top-2 left-20 w-16 h-16 object-contain scale-[3.5] z-20" />
         {/* Background Effects */}
         <div className="absolute top-[-20%] left-[-20%] w-96 h-96 bg-purple-200 rounded-full filter blur-3xl opacity-40 animate-blob"></div>
         <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-blue-200 rounded-full filter blur-3xl opacity-40 animate-blob animation-delay-2000"></div>
         <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-sky-200 rounded-full -translate-x-1/2 -translate-y-1/2 filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
-        <img src="assets/Silk.png" alt="Silk Background" className="absolute bottom-0 right-0 w-64 h-64 object-contain opacity-70 scale-[2] z-0" />
+        <img src={Silk} alt="Silk Background" className="absolute bottom-0 right-0 w-64 h-64 object-contain opacity-70 scale-[2] z-0" />
 
         <div className="w-full h-full flex flex-col p-[2cm] relative z-10">
             {/* Header */}
@@ -41,7 +45,7 @@ const FlyerPreview = forwardRef<HTMLDivElement, FlyerPreviewProps>(({
 
             {/* Mockups Section */}
             <section className="relative flex-1 flex items-center justify-center my-0 scale-90">
-                <img src="assets/Mockup.png" alt="Mockup" className="w-full h-full object-contain" />
+                <img src={Mockup} alt="Mockup" className="w-full h-full object-contain" />
             </section>
             
             {/* Features and QR Section */}
@@ -66,7 +70,7 @@ const FlyerPreview = forwardRef<HTMLDivElement, FlyerPreviewProps>(({
                     </div>
                     <div className="text-center">
                         <div className="w-40 h-40 mx-auto bg-white p-2 rounded-lg shadow-lg flex items-center justify-center transition-transform hover:scale-105">
-                            <img src="assets/QR moi.png" alt="Static QR Code" className="w-full h-full object-contain rounded-sm" />
+                            <img src={QRCodeImage} alt="Static QR Code" className="w-full h-full object-contain rounded-sm" />
                         </div>
                         <p className="mt-2 font-semibold text-gray-800 text-sm">Tải app / Truy cập web</p>
                     </div>
