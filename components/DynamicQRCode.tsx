@@ -17,7 +17,7 @@ const DynamicQRCode: React.FC<DynamicQRCodeProps> = ({ brokerId }) => {
       if (!qrCodeInstanceRef.current) {
         // Initialize QRCode instance
         qrCodeInstanceRef.current = new QRCode(qrCodeRef.current, {
-          text: 'https://shtrading.onelink.me/4ox6/y4yk4heu',
+          text: 'https://shsmart.onelink.me/Odsh/3wr4issy',
           width: 256,
           height: 256,
           colorDark: '#000000',
@@ -27,11 +27,11 @@ const DynamicQRCode: React.FC<DynamicQRCodeProps> = ({ brokerId }) => {
       }
 
       if (brokerId) {
-        const url = `https://shtrading.onelink.me/4ox6/y4yk4heu?remNo=${encodeURIComponent(brokerId)}`;
+        const url = `https://shsmart.onelink.me/Odsh/3wr4issy?remNo=${encodeURIComponent(brokerId)}`;
         qrCodeInstanceRef.current.makeCode(url);
       } else {
         // Show a placeholder or default URL when brokerId is empty
-        qrCodeInstanceRef.current.makeCode('https://shtrading.onelink.me/4ox6/y4yk4heu');
+        qrCodeInstanceRef.current.makeCode('https://shsmart.onelink.me/Odsh/3wr4issy');
       }
     }
     // Cleanup function to clear the QR code on component unmount

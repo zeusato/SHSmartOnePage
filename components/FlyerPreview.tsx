@@ -3,7 +3,7 @@ import DynamicQRCode from './DynamicQRCode';
 import { BulletIcon } from './icons';
 import Logo from '../assets/Logo.png';
 import Mockup from '../assets/Mockup.png';
-import QRCodeImage from '../assets/QR moi.png';
+import QRCodeImage from '../assets/QR moi.jpg';
 import Silk from '../assets/Silk.png';
 
 interface FlyerPreviewProps {
@@ -39,7 +39,7 @@ const FlyerPreview = forwardRef<HTMLDivElement, FlyerPreviewProps>(({
                     HỆ THỐNG GIAO DỊCH MỚI CỦA SHS
                 </h1>
                 <p className="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">
-                    Trải nghiệm <strong className="text-transparent bg-clip-text bg-gradient-to-r from-[#FA9528] to-[#F76F08]">Web Trading 2.0</strong> và Ứng dụng <strong className="text-transparent bg-clip-text bg-gradient-to-r from-[#FA9528] to-[#F76F08]">SHSmart</strong>
+                    Trải nghiệm <strong className="text-transparent bg-clip-text bg-gradient-to-r from-[#FA9528] to-[#F76F08]">SH Smart web</strong> và Ứng dụng <strong className="text-transparent bg-clip-text bg-gradient-to-r from-[#FA9528] to-[#F76F08]">SH Smart</strong>
                 </p>
             </header>
 
@@ -61,7 +61,7 @@ const FlyerPreview = forwardRef<HTMLDivElement, FlyerPreviewProps>(({
                         ))}
                     </ul>
                 </div>
-                <div className="flex gap-6 mt-4">
+                <div className="flex gap-6 mt-4 ml-auto">
                     <div className="text-center">
                         <div className="w-40 h-40 mx-auto bg-white p-2 rounded-lg shadow-lg flex items-center justify-center transition-transform hover:scale-105">
                             <DynamicQRCode brokerId={brokerId} />
