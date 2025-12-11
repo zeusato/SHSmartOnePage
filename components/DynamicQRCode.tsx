@@ -12,12 +12,15 @@ const DynamicQRCode: React.FC<DynamicQRCodeProps> = ({ brokerId }) => {
   const qrCodeRef = useRef<HTMLDivElement>(null);
   const qrCodeInstanceRef = useRef<any>(null);
 
+  // Base URL template - user input will replace "MG001"
+  const BASE_URL_TEMPLATE = 'https://shsmart.onelink.me/Odsh?af_xp=referral&pid=User_invite&deep_link_value=invite&deep_link_sub1=MG001&af_dp=shone%3A%2F%2Fdeeplink.ftl.shs';
+
   useEffect(() => {
     if (qrCodeRef.current) {
       if (!qrCodeInstanceRef.current) {
         // Initialize QRCode instance
         qrCodeInstanceRef.current = new QRCode(qrCodeRef.current, {
-          text: 'https://shsmart.onelink.me/Odsh',
+          text: BASE_URL_TEMPLATE,
           width: 256,
           height: 256,
           colorDark: '#000000',
@@ -27,20 +30,21 @@ const DynamicQRCode: React.FC<DynamicQRCodeProps> = ({ brokerId }) => {
       }
 
       if (brokerId) {
-        const url = `https://shsmart.onelink.me/Odsh?remNo=${encodeURIComponent(brokerId)}`;
+        // Replace MG001 with the user's input
+        const url = BASE_URL_TEMPLATE.replace('MG001', encodeURIComponent(brokerId));
         qrCodeInstanceRef.current.makeCode(url);
       } else {
-        // Show a placeholder or default URL when brokerId is empty
-        qrCodeInstanceRef.current.makeCode('https://shsmart.onelink.me/Odsh');
+        // Show the default template URL when brokerId is empty
+        qrCodeInstanceRef.current.makeCode(BASE_URL_TEMPLATE);
       }
     }
     // Cleanup function to clear the QR code on component unmount
     return () => {
-        if (qrCodeInstanceRef.current && qrCodeRef.current) {
-           // No standard clear method, so we clear the DOM content
-           qrCodeRef.current.innerHTML = ''; 
-           qrCodeInstanceRef.current = null;
-        }
+      if (qrCodeInstanceRef.current && qrCodeRef.current) {
+        // No standard clear method, so we clear the DOM content
+        qrCodeRef.current.innerHTML = '';
+        qrCodeInstanceRef.current = null;
+      }
     };
   }, [brokerId]);
 
